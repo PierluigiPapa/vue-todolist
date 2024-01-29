@@ -17,7 +17,7 @@
     <div class="app">
         <h1 class="text-center">PierList</h1>
 
-        <main class="container">
+        <main class="container border border-black pt-3 pb-3 shadow p-3 mb-5 bg-body-danger rounded">
             <div class="row align-item-end">
 
                 <!--// SECTION INPUT // -->
@@ -28,17 +28,29 @@
                     aria-label="Username" 
                     aria-describedby="basic-addon1">
                     
-                    <button type="button" class="btn btn-outline-dark">Dark</button>
+                    <button type="button" class="btn btn-outline-dark">Aggiungi</button>
                 </div>
                 <!-- // SECTION INPUT // -->
+
+                <div class="d-flex flex-column">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">An item
+                            <i class="fa-solid fa-xmark text-danger d-flex"></i>
+                        </li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+
+                    <div class="alert alert-dark mt-5" role="alert">
+                    Non ci sono elementi da selezionare
+                    </div>
+                </div>
             </div>
-
-
         </main>
     </div>
     
-
-
     <!-- TODO CREATE LIST HTML -->
     
 

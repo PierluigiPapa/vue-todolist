@@ -1,33 +1,33 @@
 const {createApp} = Vue
 
 createApp ({
-    data () {
+    data() {
         return {
             newList: '',
             lista: [ 
                 {
                     text: "Fare la spesa al supermercato",
-                    done: "true",
+                    done: true,
                 },
 
                 {
                     text: "Comprare le medicine in farmacia",
-                    done: "false",
+                    done: false,
                 },
 
                 {
                     text: "Studiare storia medievale, capitolo 10 e 11",
-                    done: "true",
+                    done: true,
                 },
 
                 {
                     text: "Andare in palestra",
-                    done: "false",
+                    done: false,
                 },
 
                 {
                     text: "Guardare una serie tv su Netflix",
-                    done: "true",
+                    done: true,
                 },
               
             ]

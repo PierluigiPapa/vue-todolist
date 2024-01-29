@@ -20,6 +20,7 @@
         <main class="container border border-black pt-3 pb-3 shadow p-3 mb-5 bg-body-danger rounded">
             <div class="row align-item-end">
 
+                <!-- SECTION INPUT -->
                 <div class="input-group mb-3">
                     <input
                     v-model="newList"
@@ -34,8 +35,10 @@
                     @click="addList"
                     class="btn btn-outline-dark">Aggiungi</button>
                 </div>
+                <!-- // SECTION INPUT // -->
            
                 <div class="d-flex flex-column"> 
+                <!--// SECTION LIST // -->
                     <ul class="list-group" v-if="lista.length !== 0">
                         <li
                         v-for="(element, index) in lista"
@@ -48,11 +51,14 @@
                         <i @click="deleteList(index)" class="fa-solid fa-xmark text-danger"></i>
                         </li>
                     </ul>
+                <!-- // SECTION LIST // -->
 
+                <!-- SECTION ALERT -->
                     <div v-else class="alert alert-dark text-center" role="alert">
                         BRAVO! HAI CONCLUSO LA GIORNATA!
                     </div>
                 </div>
+                <!-- // SECTION ALERT // -->
             </div>
         </main>
     </div>

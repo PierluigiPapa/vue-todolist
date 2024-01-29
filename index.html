@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div class="app">
+    <div id="app">
         <h1 class="text-center">PierList</h1>
 
         <main class="container border border-black pt-3 pb-3 shadow p-3 mb-5 bg-body-danger rounded">
@@ -28,8 +28,7 @@
                     class="form-control"
                     placeholder="Inserisci un elemento da aggiungere"
                     name="list"
-                    id="list"
-                    aria-describedby="new list"
+                    id="text-list"
                     @keyUp.enter="addList">
 
                     <button 

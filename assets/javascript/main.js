@@ -33,6 +33,9 @@ createApp ({
             ]
         }
     },
+    created() {
+
+    },
     methods : {
         checkStatus(check) {
             if(check === true) return 'text-decoration-line-through';
@@ -42,13 +45,12 @@ createApp ({
             if (this.newList.trim() !== '') {
                 this.lista.push({
                   text: this.newList,
-                  done: false,
+                  done: false
                 }),
               this.newList = ''};
         },
         deleteList (index) {
             this.lista.splice(index, 1);
-            console.log('Cancella dalla lista', index);
         },
         doneTask (index) {
             (this.lista[index].done) ? (this.lista[index].done = false) : (this.lista[index].done = true);

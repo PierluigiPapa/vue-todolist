@@ -20,7 +20,6 @@
         <main class="container border border-black pt-3 pb-3 shadow p-3 mb-5 bg-body-danger rounded">
             <div class="row align-item-end">
 
-                <!--// SECTION INPUT // -->
                 <div class="input-group mb-3">
                     <input
                     v-model="newList"
@@ -35,31 +34,32 @@
                     @click="addList"
                     class="btn btn-outline-dark">Aggiungi</button>
                 </div>
-                <!-- // SECTION INPUT // -->
-
-                <!-- // SECTION LIST // -->
+           
                 <div class="d-flex flex-column">
+                    
                     <ul class="list-group" 
-                    v-if="lista.lenght > 0">
+                    v-if="lista.lenght !== 0">
                         <li
                         v-for="(element, index) in lista"
                         :key= "index"
                         class="list-group-item d-flex justify-content-between align-items-center"
                         :class="{done: element.done}">
+                        
                         <span :class="{'text-decoration-line-through': element.done }" @click="doneTask(index)">{{element.text}}</span>
+                        
                         <i @click="deleteList(index)" class="fa-solid fa-xmark text-danger"></i>
                         </li>
+                        
                         <!-- <li class="list-group-item">A second item</li>
                         <li class="list-group-item">A third item</li>
                         <li class="list-group-item">A fourth item</li>
                         <li class="list-group-item">And a fifth one</li> -->
                     </ul>
-                <!-- // SECTION LIST // -->
 
-                <!-- // SECTION ALERT // -->
-                    <div class="alert alert-dark mt-5" role="alert"> Hai concluso la tua giornata!</div>
+                    <div v-else>
+                        HAI CONCLUSO LA GIORNATA!
+                    </div>
                 </div>
-                <!-- // SECTION ALERT // -->
             </div>
         </main>
     </div>

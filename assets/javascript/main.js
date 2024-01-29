@@ -47,7 +47,9 @@ createApp ({
                   text: this.newList,
                   done: false
                 }),
-              this.newList = ''};
+
+                this.newList = ''
+            };
         },
         deleteList (index) {
             this.lista.splice(index, 1);

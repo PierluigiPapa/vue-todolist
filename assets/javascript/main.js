@@ -7,7 +7,7 @@ createApp ({
             lista: [ 
                 {
                     text: "Fare la spesa al supermercato",
-                    done: "tre",
+                    done: "true",
                 },
 
                 {
@@ -17,39 +17,41 @@ createApp ({
 
                 {
                     text: "Studiare storia medievale, capitolo 10 e 11",
-                    todo: "true",
+                    done: "true",
                 },
 
                 {
                     text: "Andare in palestra",
-                    todo: "false",
+                    done: "false",
                 },
 
                 {
                     text: "Guardare una serie tv su Netflix",
-                    todo: "true",
+                    done: "true",
                 },
               
             ]
         }
     },
-    created (){
-    },
     methods : {
+        checkStatus(check) {
+            if(check === true) return 'text-decoration-line-through';
+          },
+
         addList (){
             if (this.newList.trim() !== '') {
                 this.lista.push({
                   text: this.newList,
-                  done: false
+                  done: false,
                 }),
               this.newList = ''};
         },
         deleteList (index) {
-            this.list.splice(index,1);
+            this.lista.splice(index, 1);
             console.log('Cancella dalla lista', index);
         },
         doneTask (index) {
-            (this.list[index].todo) ? (this.list[index].todo = false) : (this.list[index].todo = true);
+            (this.lista[index].done) ? (this.lista[index].done = false) : (this.lista[index].done = true);
         }
     }
 }).mount ('#app')

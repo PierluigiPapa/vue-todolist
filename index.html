@@ -22,26 +22,33 @@
 
                 <!--// SECTION INPUT // -->
                 <div class="input-group mb-3">
-                    <input type="text"
+                    <input
+                    v-model="newList"
+                    type="text"
                     class="form-control"
                     placeholder="Inserisci un elemento da aggiungere"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                    v-model="newList"
-                    @keyU.enter="addList">
+                    name="list"
+                    id="list"
+                    aria-describedby="new list"
+                    @keyUp.enter="addList">
 
-                    <button @click="addList"
-                    type="button"
+                    <button 
+                    @click="addList"
                     class="btn btn-outline-dark">Aggiungi</button>
                 </div>
                 <!-- // SECTION INPUT // -->
 
                 <!-- // SECTION LIST // -->
                 <div class="d-flex flex-column">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <i @click="deleteList"
-                            class="fa-solid fa-xmark text-danger d-flex"></i>
+                    <ul class="list-group" 
+                    v-if="lista.lenght > 0">
+                        <li
+                        v-for="(element, index) in lista"
+                        :key= "index"
+                        class="list-group-item d-flex justify-content-between align-items-center"
+                        :class="{done: element.done}">
+                        <span :class="{'text-decoration-line-through': element.done }" @click="doneTask(index)">{{element.text}}</span>
+                        <i @click="deleteList(index)" class="fa-solid fa-xmark text-danger"></i>
                         </li>
                         <!-- <li class="list-group-item">A second item</li>
                         <li class="list-group-item">A third item</li>
@@ -60,12 +67,11 @@
 
     <!-- TODO METHODS ON MAIN.JS -->
 
-
+    <!-- LINK VUE -->
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <!-- LINK BOOTSTRAP JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-     <!-- LINK VUE -->
-     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-     <!-- LINK JAVASCRIPT -->
-     <script src="./assets/javascript/main.js"></script>
+    <!-- LINK JAVASCRIPT -->
+    <script src="./assets/javascript/main.js"></script>
 </body>
 </html>

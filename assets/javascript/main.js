@@ -43,7 +43,7 @@ createApp ({
 
         addList (){
             if (this.newList.trim() !== '') {
-                this.lista.push({
+                this.lista.unshift({
                   text: this.newList,
                   done: false
                 }),
